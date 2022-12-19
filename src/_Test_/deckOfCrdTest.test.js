@@ -1,14 +1,17 @@
+import React from 'react';
 import Enzyme, {mount} from 'enzyme';
+import Card from '../components/Card';
+import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import CardsWrapper from '../components/CardsWrapper';
-import 'whatwg-fetch';
+
 
 describe('Testing', ()=>{
-  it('render App with CardsWrapper details',()=>{
+  it('render card with style',()=>{
     const wrapper = mount(
-        <App/>
+        <Card/>
    );
-   expect (wrapper.containsAllMatchingElements(<CardsWrapper/>)).toEqual(true);
-   expect(wrapper.find('CardsWrapper').props().cardsNumber).toHaveLength(0);
+   expect (wrapper.html()).toContain('card-container');
+   expect(wrapper.html()).toContain('card-content__inner');
+
   })
 })
