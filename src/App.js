@@ -5,7 +5,6 @@ import CardsWrapper from "./components/CardsWrapper";
 
 const App=()=> {
 
-
   return (
     <div className="App">
      <button onClick={() => window.location.reload()}>Shuffle Cards</button>
